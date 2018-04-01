@@ -36,13 +36,12 @@ def create_session():
         if has_cookies is False:
             raise ValueError('请填写config.ini文件中的cookies项.')
         else:
-            # r = requests.get('http://www.zhihu.com/login/email', cookies=cookies) # 实现验证码登陆
             r = session.get('http://www.zhihu.com/login/email', cookies=cookies) # 实现验证码登陆
+            # r = requests.get('http://www.zhihu.com/login/email', cookies=cookies) # 实现验证码登陆
+        with open('login.html', 'w') as fp:
+            fp.write(r.content)
 
-    with open('login.html', 'w') as fp:
-        fp.write(r.content)
-
-    return session, cookies
+        return session, cookies
 
 
 if __name__ == '__main__':

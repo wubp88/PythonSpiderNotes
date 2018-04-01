@@ -1,11 +1,14 @@
 #coding: utf-8
 from scrapy.cmdline import execute
 import os
+import sys
 
 if __name__ == '__main__':
     project_name = "Wechatproject"
     spider_name = "wechat"
     results_name = "results/results.json"
+
+    #print sys.path
 
     if not os.path.exists(project_name):
         print "Please Edit the project files and Run again!!!"

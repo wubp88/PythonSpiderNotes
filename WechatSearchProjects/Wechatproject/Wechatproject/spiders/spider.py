@@ -1,7 +1,7 @@
 #coding: utf-8
 from scrapy.spider import BaseSpider
 from scrapy.selector import Selector
-from Wechatproject.items import WechatprojectItem
+from ..items import WechatprojectItem
 from bs4 import BeautifulSoup
 from scrapy.http import Request
 
@@ -12,7 +12,7 @@ class WechatSpider(BaseSpider):
     name = "wechat"
 
     start_urls = []
-    querystring = u"清华"
+    querystring = u"紫光股份    "
     type = 2 # 2-文章，1-微信号
     for i in range(1, 50, 1):
         start_urls.append("http://weixin.sogou.com/weixin?type=%d&query=%s&page=%d" % (type, querystring, i))

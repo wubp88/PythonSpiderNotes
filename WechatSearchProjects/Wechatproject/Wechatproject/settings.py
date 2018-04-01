@@ -11,7 +11,11 @@ BOT_NAME = 'Wechatproject'
 SPIDER_MODULES = ['Wechatproject.spiders']
 NEWSPIDER_MODULE = 'Wechatproject.spiders'
 
-ITEM_PIPELINES = ['Wechatproject.pipelines.WechatprojectPipeline'] # add settings
+#ITEM_PIPELINES = ['Wechatproject.pipelines.WechatprojectPipeline'] # add settings
+
+ITEM_PIPELINES = {'Wechatproject.pipelines.WechatprojectPipeline':0} # add settings
+
+
 #############################################################################################
 # '''if you want to download images'''
 # ITEM_PIPELINES = {'Wechatproject.pipelines.WechatprojectPipeline':1, 'Wechatproject.pipelines.MyImagesPipeline':2 # add settings
